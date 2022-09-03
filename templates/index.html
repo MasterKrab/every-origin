@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Every origin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <meta name="description" content="Free CORS proxy for developers" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="hero is-primary">
+      <div class="hero-body">
+        <h1 class="title">Every origin</h1>
+        <h2 class="subtitle">Free CORS proxy for developers</h2>
+      </div>
+    </header>
+    <main class="container">
+      <section class="section">
+        <h3 class="title">How to use</h3>
+
+        <section class="content has-background-light p-5">
+          <h4 class="subtitle">Add to the url like param</h4>
+          <code>{{ appUrl }}?url=https://example.com</code>
+        </section>
+
+        <section class="content has-background-light p-5">
+          <h4 class="subtitle">Or add the <code>target-url</code> header</h4>
+          <code>{ "target-url": "https://example.com" }</code>
+        </section>
+      </section>
+
+      <section class="section">
+        <h2 class="title">Examples</h2>
+
+        <pre class="mb-5">
+          <code>
+fetch("{{ appUrl }}?url=https://jsonplaceholder.typicode.com/posts")</code></pre>
+        <pre>
+          <code>
+fetch('{{ appUrl }}', {
+  method: 'POST',
+  headers: {
+    'target-url': 'https://jsonplaceholder.typicode.com/posts',
+  },
+  body: { title: 'foo', body: 'bar', userId: 1 },
+})</code></pre>
+      </section>
+    </main>
+    <footer class="footer has-text-centered">
+      Make with ❤️ and
+      <span class="has-text-link has-text-weight-semibold">Deno</span>
+    </footer>
+  </body>
+</html>
